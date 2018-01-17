@@ -68,6 +68,7 @@ let leros = [
 public class Lero: NSObject {
     
     public class func generateLero() -> String {
+        
         guard let newLero = leros.first else {return ""}
         var lero = [String]()
         for i in 0...newLero.count - 1 {
@@ -77,8 +78,12 @@ public class Lero: NSObject {
     }
     
     public class func generateRandomLero() -> String {
-        guard let newLero = leros.first else {return ""}
-        let randomIndex = Int(arc4random_uniform(UInt32(newLero.count)))
-        return newLero[randomIndex]
+        var lero = [String]()
+        let randomIndex = Int(arc4random_uniform(UInt32(leros.count)))
+        let newLero = leros[randomIndex]
+        for i in 0...newLero.count - 1 {
+            lero.append(newLero[i])
+        }
+        return lero.reduce("", +)
     }
 }
