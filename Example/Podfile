@@ -1,0 +1,6 @@
+use_frameworks!
+target 'LeroLeroPod_Tests' do
+  pod 'LeroLeroPod', :path => '../'
+  
+  
+end
