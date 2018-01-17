@@ -78,12 +78,12 @@ public class Lero: NSObject {
     }
     
     public class func generateRandomLero() -> String {
-        var lero = [String]()
+        var lero = String()
         let randomIndex = Int(arc4random_uniform(UInt32(leros.count)))
         let newLero = leros[randomIndex]
         for i in 0...newLero.count - 1 {
             lero.append(newLero[i])
         }
-        return lero.reduce("", +)
+        return lero
     }
 }
